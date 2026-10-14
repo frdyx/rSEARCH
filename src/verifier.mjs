@@ -59,7 +59,7 @@ export function gradeFindings(records) {
     singleChannel: new Set(records.map(r => r.provider)).size < 2,
     corroboratedCount: tierCounts.T4_corroborated || 0,
     demotedCount: findings.filter(f => f.demoted).length,
-    limitations: ['Retrieval logs establish activity, not the truth of claims or citation support.', 'Source-origin groups approximate shared origins using registrable domains.', 'T5_verified is never assigned automatically in v0.2.0.'],
+    limitations: ['Retrieval logs establish activity, not the truth of claims or citation support.', 'Source-origin groups approximate shared origins using registrable domains.', 'T5_verified is never assigned automatically.'],
     findings
   };
 }

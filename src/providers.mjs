@@ -94,8 +94,14 @@ function codexModelSettings() {
   } catch { return []; }
 }
 
+export function validateModelIdentifier(model) {
+  if (model === undefined || model === null || model === '') return undefined;
+  if (typeof model !== 'string' || !/^[\w./:-]{1,128}$/.test(model)) throw new Error('Invalid model identifier.');
+  return model;
+}
+
 export function providerInvocation(provider, schemaPath, repo, model) {
-  if (model && !/^[\w./:-]{1,128}$/.test(model)) throw new Error('Invalid model identifier.');
+  model = validateModelIdentifier(model);
   if (provider === 'codex') return {
     command: 'codex', args: ['exec', '--ignore-user-config', ...codexModelSettings(), ...(model ? ['--model', model] : []), '-c', 'web_search="live"', '--sandbox', 'read-only', '--skip-git-repo-check', '--ephemeral', '--json', '--output-schema', schemaPath, '-']
   };

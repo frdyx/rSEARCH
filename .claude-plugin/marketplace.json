@@ -2,5 +2,5 @@
   "name": "frdyx-rsearch",
   "owner": { "name": "FRDY" },
   "metadata": { "description": "Source-linked research with native Codex or Claude and inspectable evidence levels." },
-  "plugins": [{ "name": "rsearch", "source": "./", "description": "Research you can inspect, with native Codex or Claude.", "version": "0.2.0" }]
+  "plugins": [{ "name": "rsearch", "source": "./", "description": "Research you can inspect, with native Codex or Claude.", "version": "0.2.1" }]
 }

@@ -19,6 +19,7 @@ function addDirectory(relative) {
   }
 }
 for (const directory of ['bin', 'src']) addDirectory(directory);
+addFile('desktop/server.mjs');
 for (const file of ['LICENSE', 'package.json', 'assets/icon.png']) addFile(file);
 const lock = JSON.parse(readFileSync(path.join(root, 'npm-shrinkwrap.json'), 'utf8'));
 for (const [relative, info] of Object.entries(lock.packages)) {
@@ -29,6 +30,6 @@ const checked = unzipSync(archive);
 if (!checked[manifest.server.entry_point] || !checked['src/mcp.mjs'] || !checked['node_modules/@modelcontextprotocol/sdk/package.json']) throw new Error('Desktop bundle is missing required runtime files.');
 if (Object.keys(checked).some(name => name.includes('sharp') || name.includes('node-forge'))) throw new Error('A development dependency entered the desktop bundle.');
 mkdirSync(path.join(root, 'dist'), { recursive: true });
-const output = path.join(root, 'dist/rsearch-0.2.0.mcpb');
+const output = path.join(root, 'dist', `rsearch-${manifest.version}.mcpb`);
 writeFileSync(output, archive);
 console.log('Validated desktop bundle: ' + output + ' (' + Object.keys(checked).length + ' files).');

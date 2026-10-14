@@ -10,7 +10,7 @@ you can read, challenge, and use in your next decision.
 
 ![rSEARCH: a question flows through a choice of Codex or Claude into an evidence dossier with linked sources and an unanswered question.](assets/hero.webp)
 
-[Get started](#get-started) · [Download v0.2.0](https://github.com/frdyx/rSEARCH/releases/tag/v0.2.0) · [Installation guide](docs/installation.md) · [How it works](#how-it-works)
+[Get started](#get-started) · [Download v0.2.1](https://github.com/frdyx/rSEARCH/releases/tag/v0.2.1) · [Installation guide](docs/installation.md) · [How it works](#how-it-works)
 
 [![Verify](https://github.com/frdyx/rSEARCH/actions/workflows/ci.yml/badge.svg)](https://github.com/frdyx/rSEARCH/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-007991)](LICENSE)
@@ -81,7 +81,7 @@ lets you produce a real dossier against official Node.js documentation.
 |---|---|---|
 | Codex CLI or app | CLI runtime plus optional operator skill/plugin | Native Codex engine; Windows live smoke passed |
 | Claude Code | CLI runtime plus optional Claude plugin | Native Claude engine; Windows live smoke passed |
-| Claude Desktop | [Desktop extension download](https://github.com/frdyx/rSEARCH/releases/download/v0.2.0/rsearch-0.2.0.mcpb) | Preview: protocol and bundle tested; app installation not yet verified |
+| Claude Desktop | [Desktop extension download](https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.mcpb) | Windows installation and full Claude research passed; macOS app test pending ([details](docs/validation.md)) |
 | Another app with local MCP support | [Standard MCP configuration](docs/installation.md#other-local-mcp-clients) | Conditional on the client's local-process support |
 
 Standalone use requires **Node.js 22+** and an installed, authenticated
@@ -92,7 +92,7 @@ but still needs the chosen provider CLI installed and signed in.
 Install the versioned CLI package from GitHub Releases:
 
 ```bash
-npm install --global https://github.com/frdyx/rSEARCH/releases/download/v0.2.0/rsearch-0.2.0.tgz
+npm install --global https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.tgz
 rsearch doctor --provider claude
 ```
 
@@ -103,7 +103,8 @@ installation, source downloads, and desktop configuration.
 After installing the runtime, Claude Code users can add the operator with:
 
 ```text
-/plugin install rsearch --marketplace frdyx/rSEARCH
+/plugin marketplace add frdyx/rSEARCH
+/plugin install rsearch@frdyx-rsearch
 ```
 
 ### Run your first brief

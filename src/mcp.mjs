@@ -26,7 +26,7 @@ export async function createServer(config) {
       if (!validate || !validate(args)) throw new Error('Invalid tool name or arguments.');
       let result;
       switch (request.params.name) {
-        case 'doctor': result = await doctor(config.provider); break;
+        case 'doctor': result = { ...await doctor(config.provider), modelOverride: config.model ?? null }; break;
         case 'research_start': result = jobs.start(args); break;
         case 'research_status': result = jobs.status(args.runId); break;
         case 'research_read': result = jobs.read(args.runId); break;

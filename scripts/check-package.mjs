@@ -2,8 +2,10 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import Ajv from 'ajv';
+import { VERSION } from '../src/runtime.mjs';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const pkg = JSON.parse(readFileSync(path.join(root, 'package.json'), 'utf8'));
+if (VERSION !== pkg.version) throw new Error('Runtime version differs from package version.');
 for (const file of ['plugin.json', '.claude-plugin/plugin.json', '.codex-plugin/plugin.json', 'desktop/manifest.json']) {
   const manifest = JSON.parse(readFileSync(path.join(root, file), 'utf8'));
   if (manifest.name !== pkg.name || manifest.version !== pkg.version) throw new Error('Manifest identity drift: ' + file);
@@ -39,7 +41,7 @@ for (const file of markdown) {
     if (clean && !existsSync(path.resolve(root, path.dirname(file), clean))) throw new Error('Broken relative link in ' + file + ': ' + target);
   }
 }
-for (const file of ['README.md', 'LICENSE', 'CONTRIBUTING.md', 'docs/installation.md', 'docs/architecture.md', 'skills/rsearch-operator/SKILL.md', 'assets/hero.webp', 'assets/dataflow.svg', 'assets/icon.png']) {
+for (const file of ['README.md', 'LICENSE', 'CONTRIBUTING.md', 'docs/installation.md', 'docs/architecture.md', 'skills/rsearch-operator/SKILL.md', 'desktop/server.mjs', 'src/desktop-config.mjs', 'assets/hero.webp', 'assets/dataflow.svg', 'assets/icon.png']) {
   if (!existsSync(path.join(root, file))) throw new Error('Required package file missing: ' + file);
 }
 console.log('Package identities, desktop schema, public documentation and relative links passed.');

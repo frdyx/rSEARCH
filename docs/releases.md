@@ -14,9 +14,9 @@ node scripts/check-clean-install.mjs
 
 Build outputs in `dist/`:
 
-- `rsearch-0.2.0.tgz`: versioned npm-installable runtime and package resources.
-- `rsearch-0.2.0-source.zip`: full source, tests, docs and assets without local data.
-- `rsearch-0.2.0.mcpb`: local desktop extension with production dependencies.
+- `rsearch-<version>.tgz`: versioned npm-installable runtime and package resources.
+- `rsearch-<version>-source.zip`: full source, tests, docs and assets without local data.
+- `rsearch-<version>.mcpb`: local desktop extension with production dependencies.
 - `SHA256SUMS.txt`: archive checksums.
 
 The desktop builder validates the upstream MCPB 0.3 manifest schema and packs
@@ -26,7 +26,9 @@ The archive is unsigned; organization policies may require signed extensions.
 Run bounded provider smoke tests deliberately and sanitize any new fixture.
 Record CLI/model/platform versions and failures. A live pass on one OS does not
 establish that every desktop host is tested. Keep Claude Desktop marked preview
-until an app installation check succeeds.
+until installation and a full research run succeed in the actual app. Name the
+tested app, OS and provider versions explicitly. Publish fixes under a new patch
+version rather than replacing historical release archives.
 
 Before publishing, inspect source/package contents for private material, run the
 CI matrix, check README rendering, and verify release URLs. Attach the four

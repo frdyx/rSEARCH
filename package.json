@@ -1,6 +1,6 @@
 {
   "name": "rsearch",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Research you can inspect: native Codex and Claude research with retrieval gates and source-linked dossiers.",
   "type": "module",
   "bin": {
@@ -25,6 +25,7 @@
     "docs",
     "assets",
     "schemas",
+    "test/fixtures",
     "desktop",
     "scripts",
     "plugin.json",

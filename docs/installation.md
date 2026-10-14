@@ -21,7 +21,7 @@ own CLI. `doctor` checks installation; authentication is checked on a live run.
 ## Standalone CLI
 
 ```bash
-npm install --global https://github.com/frdyx/rSEARCH/releases/download/v0.2.0/rsearch-0.2.0.tgz
+npm install --global https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.tgz
 rsearch doctor --provider claude
 ```
 
@@ -94,10 +94,10 @@ The path is relative to your marketplace root; place the complete checkout
 there or adjust the path. Restart the app, install from the local marketplace,
 and start a new chat. The GitHub release is not an official directory listing.
 
-## Claude Desktop preview
+## Claude Desktop
 
 1. Install and authenticate Claude Code or Codex CLI.
-2. Download [rsearch-0.2.0.mcpb](https://github.com/frdyx/rSEARCH/releases/download/v0.2.0/rsearch-0.2.0.mcpb).
+2. Download [rsearch-0.2.1.mcpb](https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.mcpb).
 3. In Claude Desktop, open **Settings → Extensions → Advanced settings → Install Extension**.
 4. Choose the downloaded bundle. Enter `claude` or `codex` as the provider.
 5. Leave the model override blank unless you need an explicit CLI-supported model.
@@ -108,8 +108,16 @@ The bundle includes rSEARCH's production dependencies and uses the host's Node
 runtime. It requires Node 22+ and a provider CLI on the environment's PATH.
 It does not install or sign in to the provider for you.
 
-The protocol and archive are tested; installation in Claude Desktop remains
-unverified for v0.2.0. Report installation results with your app and OS versions.
+Installation, doctor, asynchronous research and dossier reading were checked
+in Claude Desktop **2.37337.1 on Windows**, using bundled Node **24.21.0** and
+Claude Code **2.1.299**. The acceptance run completed 14 retrievals and returned
+11 findings. macOS app installation and Desktop research using the Codex
+provider have not been checked; their offline runtime tests are separate.
+
+Version 0.2.1 fixes v0.2.0's unresolved blank-model setting. After updating,
+run doctor and check the reported version and `modelOverride` (`null` when blank)
+before starting research. If the old version is still reported, restart Claude
+Desktop and open a new chat. See the [validation record](validation.md).
 Use the [official extension guide](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
 if your settings differ or your organization restricts extensions.
 

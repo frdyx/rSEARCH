@@ -1,6 +1,6 @@
 {
   "name": "rsearch",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Research you can inspect: native Codex and Claude engines, completed-retrieval gates and source-linked dossiers.",
   "author": { "name": "FRDY", "url": "https://github.com/frdyx" },
   "homepage": "https://github.com/frdyx/rSEARCH",

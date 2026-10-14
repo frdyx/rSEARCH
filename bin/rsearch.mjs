@@ -2,12 +2,12 @@
 import { readFileSync, mkdirSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import path from 'node:path';
-import { doctor, runResearch, newRunId } from '../src/runtime.mjs';
+import { doctor, runResearch, newRunId, VERSION } from '../src/runtime.mjs';
 import { verifyRuns } from '../src/verifier.mjs';
 import { safeOutput, researchHome } from '../src/paths.mjs';
 import { serveStdio } from '../src/mcp.mjs';
 
-const help = `rSEARCH 0.2.0 — Research you can inspect.
+const help = `rSEARCH ${VERSION} — Research you can inspect.
 
 rsearch doctor [--provider codex|claude]
 rsearch research --provider codex|claude --brief-file <file>

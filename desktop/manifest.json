@@ -2,9 +2,9 @@
   "manifest_version": "0.3",
   "name": "rsearch",
   "display_name": "rSEARCH",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Research you can inspect, using native Claude or Codex.",
-  "long_description": "Start bounded research, inspect progress and read a source-linked dossier with evidence levels and gaps. Research uses your installed and authenticated provider CLI and its normal credits. Desktop integration is a preview until tested in Claude Desktop.",
+  "long_description": "Start bounded research, inspect progress and read a source-linked dossier with evidence levels and gaps. Research uses your installed and authenticated provider CLI and its normal credits. Installation and full research were tested in Claude Desktop on Windows with the Claude provider. macOS app validation is pending.",
   "author": { "name": "FRDY", "url": "https://github.com/frdyx" },
   "homepage": "https://github.com/frdyx/rSEARCH",
   "documentation": "https://github.com/frdyx/rSEARCH/blob/main/docs/installation.md",
@@ -14,11 +14,11 @@
   "icon": "assets/icon.png",
   "server": {
     "type": "node",
-    "entry_point": "bin/rsearch.mjs",
+    "entry_point": "desktop/server.mjs",
     "mcp_config": {
       "command": "node",
-      "args": ["${__dirname}/bin/rsearch.mjs", "mcp", "--provider", "${user_config.provider}", "--model", "${user_config.model}"],
-      "env": { "RSEARCH_READABLE_ROOT": "${user_config.readable_root}" }
+      "args": ["${__dirname}/desktop/server.mjs"],
+      "env": { "RSEARCH_PROVIDER": "${user_config.provider}", "RSEARCH_MODEL": "${user_config.model}", "RSEARCH_READABLE_ROOT": "${user_config.readable_root}" }
     }
   },
   "tools": [
@@ -30,7 +30,7 @@
   ],
   "compatibility": { "platforms": ["darwin", "win32"], "runtimes": { "node": ">=22.0.0" } },
   "user_config": {
-    "provider": { "type": "string", "title": "Research provider", "description": "Enter claude or codex. Install and sign in to that provider CLI first. No fallback is performed.", "required": true, "default": "claude" },
+    "provider": { "type": "string", "title": "Research provider", "description": "Enter claude or codex. Install and sign in to that provider CLI first. No fallback is performed.", "required": true },
     "model": { "type": "string", "title": "Optional model override", "description": "Leave blank to carry the model from your provider settings. Set an explicit CLI-supported model if a desktop model alias is unsupported.", "required": false, "default": "" },
     "readable_root": { "type": "directory", "title": "Optional readable repository root", "description": "Repository context is read-only and must be inside this directory. Leave blank for web-only research.", "required": false, "default": "" }
   }
