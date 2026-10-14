@@ -43,6 +43,10 @@ Optional arguments:
 By default, the worker carries the model choice from your provider settings.
 Desktop model aliases are not necessarily supported by their CLI. A failure
 does not trigger a fallback; supply a supported model explicitly when needed.
+For Codex, check the CLI's `/model` picker for models available to your current
+login. Historical smoke-test model names are records, not permanent setup
+defaults. Availability can change by date, sign-in method and account; see the
+[official model documentation](https://learn.chatgpt.com/docs/models).
 
 You can also download the source ZIP, extract it, and run `npm ci --omit=dev
 --ignore-scripts` from its root. Use `node bin/rsearch.mjs` in place of the
@@ -109,15 +113,26 @@ runtime. It requires Node 22+ and a provider CLI on the environment's PATH.
 It does not install or sign in to the provider for you.
 
 Installation, doctor, asynchronous research and dossier reading were checked
-in Claude Desktop **2.37337.1 on Windows**, using bundled Node **24.21.0** and
-Claude Code **2.1.299**. The acceptance run completed 14 retrievals and returned
-11 findings. macOS app installation and Desktop research using the Codex
-provider have not been checked; their offline runtime tests are separate.
+in Claude Desktop **2.37337.1 on Windows**, using bundled Node **24.21.0**.
+Both providers completed the same web-only HTTP-client comparison brief:
+
+| Provider | CLI / model | Completed retrievals | Findings |
+|---|---|---|---|
+| Claude | Claude Code 2.1.299; configured provider model, no override | 14 | 11 |
+| Codex | Codex CLI 0.153.4; explicit `gpt-6-astra` | 7 | 11 |
+
+Both dossiers were read through the app and re-verified locally. macOS app
+installation remains untested; offline runtime tests are separate.
 
 Version 0.2.1 fixes v0.2.0's unresolved blank-model setting. After updating,
 run doctor and check the reported version and `modelOverride` (`null` when blank)
 before starting research. If the old version is still reported, restart Claude
 Desktop and open a new chat. See the [validation record](validation.md).
+If an override change is not reflected in doctor, reopen the extension's
+configuration, enter the model value, save, restart Desktop and use a new chat.
+Doctor verifies the configured override and installed CLI; it does not establish
+model access. A live run checks that. If a model is rejected, choose one in your
+provider CLI's current model picker and update the override explicitly.
 Use the [official extension guide](https://support.claude.com/en/articles/10949351-getting-started-with-local-mcp-servers-on-claude-desktop)
 if your settings differ or your organization restricts extensions.
 

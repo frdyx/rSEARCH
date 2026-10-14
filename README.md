@@ -81,7 +81,7 @@ lets you produce a real dossier against official Node.js documentation.
 |---|---|---|
 | Codex CLI or app | CLI runtime plus optional operator skill/plugin | Native Codex engine; Windows live smoke passed |
 | Claude Code | CLI runtime plus optional Claude plugin | Native Claude engine; Windows live smoke passed |
-| Claude Desktop | [Desktop extension download](https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.mcpb) | Windows installation and full Claude research passed; macOS app test pending ([details](docs/validation.md)) |
+| Claude Desktop | [Desktop extension download](https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.mcpb) | Windows installation and full research passed with both Claude and Codex; macOS app test pending ([details](docs/validation.md)) |
 | Another app with local MCP support | [Standard MCP configuration](docs/installation.md#other-local-mcp-clients) | Conditional on the client's local-process support |
 
 Standalone use requires **Node.js 22+** and an installed, authenticated

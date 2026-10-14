@@ -27,3 +27,19 @@ test('Sanitized full Claude Desktop run preserves 14 retrievals, 11 findings and
   assert.equal(dossier.demotedCount, 3);
   assert.equal(dossier.corroboratedCount, 0);
 });
+
+test('Sanitized full Codex Desktop run preserves seven retrievals and 11 observed findings', () => {
+  const metadata = JSON.parse(readFileSync(new URL('./fixtures/live-codex-desktop.jsonl.metadata.json', import.meta.url), 'utf8'));
+  const parsed = parseStream('codex', readFileSync(new URL('./fixtures/live-codex-desktop.jsonl', import.meta.url), 'utf8'));
+  assert.equal(parsed.retrievals.length, metadata.completedRetrievals);
+  assert.equal(parsed.retrievals.length, 7);
+  assert.deepEqual(parsed.errors, []);
+  const payload = validateFindings(parsed.payload);
+  assert.equal(payload.findings.length, metadata.findingCount);
+  assert.equal(payload.findings.length, 11);
+  const dossier = gradeFindings(payload.findings.map(finding => ({ finding, provider: 'codex', runId: 'recorded-codex-desktop-run', repo: null })));
+  assert.deepEqual(dossier.tierCounts, { T3_observed: 11 });
+  assert.equal(dossier.demotedCount, 0);
+  assert.equal(dossier.corroboratedCount, 0);
+  assert.equal(dossier.singleChannel, true);
+});
