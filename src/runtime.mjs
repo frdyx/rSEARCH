@@ -8,7 +8,7 @@ import { MIN_RETRIEVALS, PROVIDERS, providerInvocation, researchPrompt, parseStr
 import { findingSchema, validateFindings } from './schema.mjs';
 import { verifyRuns } from './verifier.mjs';
 
-export const VERSION = '0.2.1';
+export const VERSION = '0.2.2';
 export const newRunId = () => 'research-' + new Date().toISOString().slice(0,10).replaceAll('-', '') + '-' + randomUUID();
 export const json = (file, value) => writeFileSync(file, JSON.stringify(value, null, 2) + '\n');
 const digest = value => createHash('sha256').update(value).digest('hex');

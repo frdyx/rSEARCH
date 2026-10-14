@@ -10,7 +10,7 @@
 <text x="518" y="329" font-size="25" font-weight="400" fill="#53666B">Native provider selection</text>
 <rect x="492" y="400" width="390" height="160" rx="18" fill="#E5F2F4" stroke="#CDD5D3" stroke-width="2"/>
 <text x="518" y="450" font-size="31" font-weight="700" fill="#152E36">Desktop MCP</text>
-<text x="518" y="494" font-size="25" font-weight="400" fill="#53666B">Start → status → read</text>
+<text x="518" y="494" font-size="25" font-weight="400" fill="#53666B">Start → progress → read</text>
 <text x="518" y="533" font-size="25" font-weight="400" fill="#53666B">Cancel an active run</text>
 <path d="M412 315H455V297H487" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
 <path d="M412 380H450V480H487" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>

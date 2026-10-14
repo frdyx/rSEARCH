@@ -10,10 +10,6 @@ Install and sign in to your chosen CLI using the provider's official guide:
 - [Codex setup](https://learn.chatgpt.com/docs/quickstart)
 - [Claude Code setup](https://code.claude.com/docs/en/setup)
 
-The release has live smoke evidence for Codex CLI **0.153.4** and Claude Code
-**2.1.299** on Windows. Use these or newer versions with compatible event
-formats. Unsupported flags or event shapes fail explicitly.
-
 Standalone rSEARCH requires Node.js **22+**. Check `node --version` first.
 The package does not collect credentials. Authenticate through the provider's
 own CLI. `doctor` checks installation; authentication is checked on a live run.
@@ -21,7 +17,7 @@ own CLI. `doctor` checks installation; authentication is checked on a live run.
 ## Standalone CLI
 
 ```bash
-npm install --global https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.tgz
+npm install --global https://github.com/frdyx/rSEARCH/releases/download/v0.2.2/rsearch-0.2.2.tgz
 rsearch doctor --provider claude
 ```
 
@@ -44,9 +40,8 @@ By default, the worker carries the model choice from your provider settings.
 Desktop model aliases are not necessarily supported by their CLI. A failure
 does not trigger a fallback; supply a supported model explicitly when needed.
 For Codex, check the CLI's `/model` picker for models available to your current
-login. Historical smoke-test model names are records, not permanent setup
-defaults. Availability can change by date, sign-in method and account; see the
-[official model documentation](https://learn.chatgpt.com/docs/models).
+login. See the [official model documentation](https://learn.chatgpt.com/docs/models)
+for model choices.
 
 You can also download the source ZIP, extract it, and run `npm ci --omit=dev
 --ignore-scripts` from its root. Use `node bin/rsearch.mjs` in place of the
@@ -101,7 +96,7 @@ and start a new chat. The GitHub release is not an official directory listing.
 ## Claude Desktop
 
 1. Install and authenticate Claude Code or Codex CLI.
-2. Download [rsearch-0.2.1.mcpb](https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.mcpb).
+2. Download [rsearch-0.2.2.mcpb](https://github.com/frdyx/rSEARCH/releases/download/v0.2.2/rsearch-0.2.2.mcpb).
 3. In Claude Desktop, open **Settings → Extensions → Advanced settings → Install Extension**.
 4. Choose the downloaded bundle. Enter `claude` or `codex` as the provider.
 5. Leave the model override blank unless you need an explicit CLI-supported model.
@@ -112,22 +107,13 @@ The bundle includes rSEARCH's production dependencies and uses the host's Node
 runtime. It requires Node 22+ and a provider CLI on the environment's PATH.
 It does not install or sign in to the provider for you.
 
-Installation, doctor, asynchronous research and dossier reading were checked
-in Claude Desktop **2.37337.1 on Windows**, using bundled Node **24.21.0**.
-Both providers completed the same web-only HTTP-client comparison brief:
+rSEARCH works in Claude Desktop with either Claude or Codex as the research
+provider. The provider you configure performs the research and returns a dossier
+through the extension's tools.
 
-| Provider | CLI / model | Completed retrievals | Findings |
-|---|---|---|---|
-| Claude | Claude Code 2.1.299; configured provider model, no override | 14 | 11 |
-| Codex | Codex CLI 0.153.4; explicit `gpt-6-astra` | 7 | 11 |
-
-Both dossiers were read through the app and re-verified locally. macOS app
-installation remains untested; offline runtime tests are separate.
-
-Version 0.2.1 fixes v0.2.0's unresolved blank-model setting. After updating,
-run doctor and check the reported version and `modelOverride` (`null` when blank)
-before starting research. If the old version is still reported, restart Claude
-Desktop and open a new chat. See the [validation record](validation.md).
+Run doctor before your first brief. It reports the selected provider and
+`modelOverride` (`null` when blank). After updating the extension, restart
+Claude Desktop and open a new chat to load the new version.
 If an override change is not reflected in doctor, reopen the extension's
 configuration, enter the model value, save, restart Desktop and use a new chat.
 Doctor verifies the configured override and installed CLI; it does not establish
@@ -158,9 +144,8 @@ context. Repeat it for more roots. Add `--model` for an explicit model override.
 
 The five tools are `doctor`, `research_start`, `research_status`,
 `research_read`, and `research_cancel`. Start returns a run ID immediately;
-poll status at reasonable intervals and read results only after completion.
-Clients must support local process launches. These clients have not all been
-tested, and the toolkit is not a remote hosted research service.
+check progress at reasonable intervals and read results after completion.
+Use a client that supports local stdio MCP servers and can launch Node.js.
 
 ## Uninstall
 

@@ -3,8 +3,10 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import sharp from 'sharp';
 const root = fileURLToPath(new URL('../', import.meta.url));
+const specifications = JSON.parse(readFileSync(path.join(root, 'assets/specifications.json'), 'utf8'));
 for (const name of ['hero', 'technology-selection', 'migration-planning', 'interface-research', 'source-audit']) {
-  await sharp(path.join(root, 'assets/raw', name + '.png')).resize({ width: 1400, withoutEnlargement: true }).webp({ quality: 88 }).toFile(path.join(root, 'assets', name + '.webp'));
+  const asset = specifications.assets.find(item => item.name === name);
+  await sharp(path.join(root, asset.source)).resize({ width: 1400, withoutEnlargement: true }).webp({ quality: 88 }).toFile(path.join(root, asset.output));
 }
 await sharp(path.join(root, 'assets/raw/social-preview.png')).resize(1280, 640, { fit: 'contain', background: '#F5F4EE' }).png({ compressionLevel: 9 }).toFile(path.join(root, 'assets/social-preview.png'));
 
@@ -25,7 +27,7 @@ text(72,102,'rSEARCH',64,700);
 text(72,159,'A focused question becomes an inspectable evidence dossier.',30,400,'#53666B');
 box(72,245,340,200,'Bounded brief',['Question and scope','Sources and falsifiers']);
 box(492,235,390,125,'CLI or operator skill',['Native provider selection']);
-box(492,400,390,160,'Desktop MCP',['Start → status → read','Cancel an active run'],'#E5F2F4');
+box(492,400,390,160,'Desktop MCP',['Start → progress → read','Cancel an active run'],'#E5F2F4');
 arrow('M412 315H455V297H487'); arrow('M412 380H450V480H487');
 box(972,235,360,145,'Codex',['Live search · read-only','Recorded JSONL events']);
 box(972,420,360,145,'Claude',['Search / fetch / read','Matched tool results']);

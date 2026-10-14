@@ -14,7 +14,7 @@ It is not an offline model or a guarantee that data stays on your computer.
 
 Review logs before sharing them in issues. Remove account details, private
 paths, sensitive source content and queries that should not be public. The
-repository's live-smoke fixtures omit provider initialization, session details,
+repository's sanitized event fixtures omit provider initialization, session details,
 reasoning and retrieved page bodies while retaining the necessary event shapes.
 
 The worker treats web page instructions as untrusted data. That is a workflow

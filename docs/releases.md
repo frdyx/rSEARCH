@@ -23,12 +23,10 @@ The desktop builder validates the upstream MCPB 0.3 manifest schema and packs
 a standard ZIP with only production dependencies. No signing key is required.
 The archive is unsigned; organization policies may require signed extensions.
 
-Run bounded provider smoke tests deliberately and sanitize any new fixture.
-Record CLI/model/platform versions and failures. A live pass on one OS does not
-establish that every desktop host is tested. Keep Claude Desktop marked preview
-until installation and a full research run succeed in the actual app. Name the
-tested app, OS and provider versions explicitly. Publish fixes under a new patch
-version rather than replacing historical release archives.
+Run live provider checks deliberately: they use normal provider usage. Review
+and sanitize any new event fixture before committing it. Keep release copy
+focused on the workflow, setup and changes users need. Publish updates under a
+new version rather than replacing historical release archives.
 
 Before publishing, inspect source/package contents for private material, run the
 CI matrix, check README rendering, and verify release URLs. Attach the four

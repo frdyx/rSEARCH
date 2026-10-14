@@ -10,9 +10,8 @@ you can read, challenge, and use in your next decision.
 
 ![rSEARCH: a question flows through a choice of Codex or Claude into an evidence dossier with linked sources and an unanswered question.](assets/hero.webp)
 
-[Get started](#get-started) · [Download v0.2.1](https://github.com/frdyx/rSEARCH/releases/tag/v0.2.1) · [Installation guide](docs/installation.md) · [How it works](#how-it-works)
+[Get started](#get-started) · [Download v0.2.2](https://github.com/frdyx/rSEARCH/releases/tag/v0.2.2) · [Installation guide](docs/installation.md) · [How it works](#how-it-works)
 
-[![Verify](https://github.com/frdyx/rSEARCH/actions/workflows/ci.yml/badge.svg)](https://github.com/frdyx/rSEARCH/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-007991)](LICENSE)
 
 ## Make the next decision with clearer evidence
@@ -28,24 +27,24 @@ claim true or guarantee that a citation supports it.
 <table>
 <tr>
 <td width="50%">
-<img src="assets/technology-selection.webp" alt="Technology options flow into an evidence comparison and a decision with an unresolved alternative." width="440">
+<img src="assets/technology-selection.webp" alt="Choose a technology: options flow into an evidence comparison and a decision with an unresolved alternative." width="440">
 <h3>Choose a technology</h3>
 <p>Check capabilities, compatibility, and licence sources before you commit to a dependency.</p>
 </td>
 <td width="50%">
-<img src="assets/migration-planning.webp" alt="Research connects a current system to a migration plan and exposes an unanswered assumption." width="440">
+<img src="assets/migration-planning.webp" alt="Find migration gaps early: research connects a current system to a migration plan and exposes an unanswered assumption." width="440">
 <h3>Find migration gaps early</h3>
 <p>Separate documented constraints from assumptions that still need investigation.</p>
 </td>
 </tr>
 <tr>
 <td>
-<img src="assets/interface-research.webp" alt="Controller-navigation references become researched patterns that inform a proposed interface direction." width="440">
+<img src="assets/interface-research.webp" alt="Research an interaction: controller-navigation references become researched patterns that inform a proposed interface direction." width="440">
 <h3>Research an interaction</h3>
 <p>Use prior art to inform a design direction, with questions left visible for later testing.</p>
 </td>
 <td>
-<img src="assets/source-audit.webp" alt="Two matching sources collapse into one shared origin while an independent source follows a separate path into a dossier." width="440">
+<img src="assets/source-audit.webp" alt="Trace the claim: two matching sources collapse into one shared origin while an independent source follows a separate path into a dossier." width="440">
 <h3>Trace the claim</h3>
 <p>Audit sources and distinguish independent support from one origin repeated.</p>
 </td>
@@ -77,12 +76,12 @@ lets you produce a real dossier against official Node.js documentation.
 
 ### Pick your environment
 
-| Environment | Installation | Status |
-|---|---|---|
-| Codex CLI or app | CLI runtime plus optional operator skill/plugin | Native Codex engine; Windows live smoke passed |
-| Claude Code | CLI runtime plus optional Claude plugin | Native Claude engine; Windows live smoke passed |
-| Claude Desktop | [Desktop extension download](https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.mcpb) | Windows installation and full research passed with both Claude and Codex; macOS app test pending ([details](docs/validation.md)) |
-| Another app with local MCP support | [Standard MCP configuration](docs/installation.md#other-local-mcp-clients) | Conditional on the client's local-process support |
+| Environment | Installation |
+|---|---|
+| Codex CLI or app | CLI runtime plus optional operator skill/plugin |
+| Claude Code | CLI runtime plus optional Claude plugin |
+| Claude Desktop | [Desktop extension](https://github.com/frdyx/rSEARCH/releases/download/v0.2.2/rsearch-0.2.2.mcpb), with Claude or Codex as your provider |
+| Other apps with local MCP support | [Standard MCP configuration](docs/installation.md#other-local-mcp-clients) |
 
 Standalone use requires **Node.js 22+** and an installed, authenticated
 **Codex CLI or Claude Code**. You need only the provider you choose. The desktop
@@ -92,7 +91,7 @@ but still needs the chosen provider CLI installed and signed in.
 Install the versioned CLI package from GitHub Releases:
 
 ```bash
-npm install --global https://github.com/frdyx/rSEARCH/releases/download/v0.2.1/rsearch-0.2.1.tgz
+npm install --global https://github.com/frdyx/rSEARCH/releases/download/v0.2.2/rsearch-0.2.2.tgz
 rsearch doctor --provider claude
 ```
 
@@ -194,8 +193,8 @@ still need review. File existence is not proof of a claim about a file.
 [Open an issue](https://github.com/frdyx/rSEARCH/issues) with the version,
 provider, platform, and a minimal example. Review logs before attaching them.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), the [validation record](docs/validation.md),
-and the [release guide](docs/releases.md). Maintained by [FRDY](https://github.com/frdyx).
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [release guide](docs/releases.md).
+Maintained by [FRDY](https://github.com/frdyx).
 
 Licensed under [MIT](LICENSE). Bundled third-party dependencies retain their
 own licences; the MCPB manifest schema attribution is in [schemas/MCPB-LICENSE](schemas/MCPB-LICENSE).

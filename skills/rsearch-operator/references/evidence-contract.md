@@ -4,7 +4,7 @@ The provider's recorded events establish retrieval activity. Findings carry a
 claim, source, source kind, proposed tier, falsifier and limitations. The
 verifier derives source-origin groups and assigns the final evidence level.
 
-| Level | Meaning in v0.2.0 |
+| Level | Meaning |
 |---|---|
 | T1_proposed | No usable source origin was established. |
 | T3_observed | Cited evidence without independent-channel corroboration. |

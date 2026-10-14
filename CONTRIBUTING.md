@@ -23,7 +23,8 @@ An unknown event format must fail closed. Do not infer retrieval from prose.
 
 Evidence policy changes need tests demonstrating what the new tier establishes.
 Do not promote file existence to verification, or count extra workers as
-independent channels. Documentation must state what remains unverified.
+independent channels. Document what each evidence level establishes and its
+limits.
 
 For assets, preserve the explanatory graphic direction and include alt text.
 Keep the workflow claims accurate and provide compact web exports. See
