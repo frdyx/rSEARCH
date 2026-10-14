@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rsearch",
+  "version": "0.2.0",
+  "description": "Research you can inspect: source-linked dossiers using native Codex or Claude, with retrieval gates and explicit evidence levels.",
+  "author": { "name": "FRDY", "url": "https://github.com/frdyx" },
+  "homepage": "https://github.com/frdyx/rSEARCH",
+  "repository": "https://github.com/frdyx/rSEARCH",
+  "license": "MIT",
+  "keywords": ["research", "evidence", "codex", "claude", "mcp"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "rSEARCH",
+        "shortDescription": "Research you can inspect.",
+        "longDescription": "Turn a focused question into a source-linked report with explicit evidence levels, visible gaps and a record of research activity. Choose native Codex or Claude. Install and authenticate the selected provider CLI before researching.",
+        "developerName": "FRDY",
+        "category": "Developer Tools",
+        "capabilities": ["Read", "Interactive"],
+        "websiteURL": "https://github.com/frdyx/rSEARCH",
+        "defaultPrompt": ["Research this question and show me its sources, evidence levels and gaps."]
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "kind": "sanitized-live-recording",
+  "provider": "codex",
+  "recordedDate": "2026-10-14",
+  "completedRetrievals": 4,
+  "originalStreamSha256": "8c5d7b0b81e504d522894f39f3020548e4836ecac96353ca44fa7228abfee0aa",
+  "omitted": [
+    "provider initialization",
+    "session identifiers",
+    "local paths",
+    "reasoning",
+    "retrieved response bodies"
+  ],
+  "note": "Parser-relevant events reconstructed from observed completed operations; not a full original transcript."
+}

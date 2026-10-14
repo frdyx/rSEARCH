@@ -1,0 +1,4 @@
+interface:
+  display_name: "rSEARCH operator"
+  short_description: "Research with visible sources, evidence levels and gaps"
+  default_prompt: "Use $rsearch-operator to research this question and show its sources, evidence levels and limitations."

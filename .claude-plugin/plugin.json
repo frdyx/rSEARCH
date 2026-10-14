@@ -1,0 +1,10 @@
+{
+  "name": "rsearch",
+  "version": "0.2.0",
+  "description": "Research you can inspect: native Codex and Claude engines, completed-retrieval gates and source-linked dossiers.",
+  "author": { "name": "FRDY", "url": "https://github.com/frdyx" },
+  "homepage": "https://github.com/frdyx/rSEARCH",
+  "repository": "https://github.com/frdyx/rSEARCH",
+  "license": "MIT",
+  "skills": "./skills/"
+}

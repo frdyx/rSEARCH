@@ -1,0 +1,6 @@
+{
+  "name": "rsearch",
+  "version": "0.2.0",
+  "description": "Research you can inspect, with native Codex or Claude.",
+  "skills": "./skills/"
+}

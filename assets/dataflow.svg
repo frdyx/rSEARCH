@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1080" viewBox="0 0 1800 1080" role="img" aria-labelledby="title desc"><title id="title">rSEARCH architecture and dataflow</title><desc id="desc">A brief enters the CLI or skill or the desktop MCP server. Native Codex or Claude produce recorded search events and structured findings. Two completed retrieval operations are required. Failed runs stop. A verifier assigns evidence levels and produces Markdown and JSON dossiers.</desc><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#007991"/></marker></defs><rect width="1800" height="1080" fill="#F5F4EE"/><g font-family="Segoe UI,Arial,sans-serif" fill="#152E36">
+<text x="72" y="102" font-size="64" font-weight="700" fill="#152E36">rSEARCH</text>
+<text x="72" y="159" font-size="30" font-weight="400" fill="#53666B">A focused question becomes an inspectable evidence dossier.</text>
+<rect x="72" y="245" width="340" height="200" rx="18" fill="#FFFFFF" stroke="#CDD5D3" stroke-width="2"/>
+<text x="98" y="295" font-size="31" font-weight="700" fill="#152E36">Bounded brief</text>
+<text x="98" y="339" font-size="25" font-weight="400" fill="#53666B">Question and scope</text>
+<text x="98" y="378" font-size="25" font-weight="400" fill="#53666B">Sources and falsifiers</text>
+<rect x="492" y="235" width="390" height="125" rx="18" fill="#FFFFFF" stroke="#CDD5D3" stroke-width="2"/>
+<text x="518" y="285" font-size="31" font-weight="700" fill="#152E36">CLI or operator skill</text>
+<text x="518" y="329" font-size="25" font-weight="400" fill="#53666B">Native provider selection</text>
+<rect x="492" y="400" width="390" height="160" rx="18" fill="#E5F2F4" stroke="#CDD5D3" stroke-width="2"/>
+<text x="518" y="450" font-size="31" font-weight="700" fill="#152E36">Desktop MCP</text>
+<text x="518" y="494" font-size="25" font-weight="400" fill="#53666B">Start → status → read</text>
+<text x="518" y="533" font-size="25" font-weight="400" fill="#53666B">Cancel an active run</text>
+<path d="M412 315H455V297H487" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<path d="M412 380H450V480H487" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<rect x="972" y="235" width="360" height="145" rx="18" fill="#FFFFFF" stroke="#CDD5D3" stroke-width="2"/>
+<text x="998" y="285" font-size="31" font-weight="700" fill="#152E36">Codex</text>
+<text x="998" y="329" font-size="25" font-weight="400" fill="#53666B">Live search · read-only</text>
+<text x="998" y="368" font-size="25" font-weight="400" fill="#53666B">Recorded JSONL events</text>
+<rect x="972" y="420" width="360" height="145" rx="18" fill="#FFFFFF" stroke="#CDD5D3" stroke-width="2"/>
+<text x="998" y="470" font-size="31" font-weight="700" fill="#152E36">Claude</text>
+<text x="998" y="514" font-size="25" font-weight="400" fill="#53666B">Search / fetch / read</text>
+<text x="998" y="553" font-size="25" font-weight="400" fill="#53666B">Matched tool results</text>
+<path d="M882 296H920V492M882 480H920" fill="none" stroke="#007991" stroke-width="4"/>
+<path d="M920 305H967" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<path d="M920 492H967" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<text x="995" y="214" font-size="23" font-weight="400" fill="#53666B">Choose one provider</text>
+<rect x="1422" y="295" width="306" height="240" rx="18" fill="#E5F2F4" stroke="#CDD5D3" stroke-width="2"/>
+<text x="1448" y="345" font-size="31" font-weight="700" fill="#152E36">Retrieval gate</text>
+<text x="1448" y="389" font-size="25" font-weight="400" fill="#53666B">At least 2 completed</text>
+<text x="1448" y="428" font-size="25" font-weight="400" fill="#53666B">retrieval operations</text>
+<text x="1448" y="467" font-size="25" font-weight="400" fill="#53666B">Valid findings payload</text>
+<path d="M1332 305H1376V365H1417" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<path d="M1332 492H1376V462H1417" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<rect x="1422" y="635" width="306" height="148" rx="18" fill="#FCEDDA" stroke="#CDD5D3" stroke-width="2"/>
+<text x="1448" y="685" font-size="31" font-weight="700" fill="#152E36">Failed run stops</text>
+<text x="1448" y="729" font-size="25" font-weight="400" fill="#53666B">Diagnostics retained</text>
+<path d="M1575 535V630" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<text x="1598" y="586" font-size="23" font-weight="600" fill="#936124">Fail</text>
+<rect x="972" y="720" width="360" height="200" rx="18" fill="#FFFFFF" stroke="#CDD5D3" stroke-width="2"/>
+<text x="998" y="770" font-size="31" font-weight="700" fill="#152E36">Evidence verifier</text>
+<text x="998" y="814" font-size="25" font-weight="400" fill="#53666B">Source-origin groups</text>
+<text x="998" y="853" font-size="25" font-weight="400" fill="#53666B">Final tiers · no auto T5</text>
+<text x="998" y="892" font-size="25" font-weight="400" fill="#53666B">Limits and demotions</text>
+<path d="M1422 520H1360V665H1152V715" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<text x="1176" y="648" font-size="23" font-weight="600" fill="#007991">Pass</text>
+<rect x="492" y="720" width="390" height="200" rx="18" fill="#E5F2F4" stroke="#CDD5D3" stroke-width="2"/>
+<text x="518" y="770" font-size="31" font-weight="700" fill="#152E36">Readable dossier</text>
+<text x="518" y="814" font-size="25" font-weight="400" fill="#53666B">dossier.md + dossier.json</text>
+<text x="518" y="853" font-size="25" font-weight="400" fill="#53666B">Claims · sources · gaps</text>
+<path d="M972 820H887" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<rect x="72" y="720" width="340" height="200" rx="18" fill="#FFFFFF" stroke="#CDD5D3" stroke-width="2"/>
+<text x="98" y="770" font-size="31" font-weight="700" fill="#152E36">User decision</text>
+<text x="98" y="814" font-size="25" font-weight="400" fill="#53666B">Inspect and challenge</text>
+<text x="98" y="853" font-size="25" font-weight="400" fill="#53666B">Choose the next action</text>
+<path d="M492 820H417" fill="none" stroke="#007991" stroke-width="4"  marker-end="url(#arrow)"/>
+<text x="72" y="1014" font-size="26" font-weight="400" fill="#53666B">The log proves retrieval activity. Citation support, source independence and claim correctness still need review.</text>
+</g></svg>

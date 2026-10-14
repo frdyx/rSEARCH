@@ -1,0 +1,56 @@
+{
+  "name": "rsearch",
+  "version": "0.2.0",
+  "description": "Research you can inspect: native Codex and Claude research with retrieval gates and source-linked dossiers.",
+  "type": "module",
+  "bin": {
+    "rsearch": "bin/rsearch.mjs"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "license": "MIT",
+  "author": "FRDY",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frdyx/rSEARCH.git"
+  },
+  "homepage": "https://github.com/frdyx/rSEARCH#readme",
+  "bugs": "https://github.com/frdyx/rSEARCH/issues",
+  "files": [
+    "bin",
+    "src",
+    "skills",
+    "examples",
+    "docs",
+    "assets",
+    "schemas",
+    "desktop",
+    "scripts",
+    "plugin.json",
+    ".claude-plugin",
+    ".codex-plugin",
+    "npm-shrinkwrap.json",
+    "LICENSE",
+    "README.md",
+    "CONTRIBUTING.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check-package.mjs",
+    "build:desktop": "node scripts/build-desktop.mjs",
+    "build:assets": "node scripts/build-assets.mjs",
+    "build:release": "node scripts/build-release.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "ajv": "8.20.0",
+    "cross-spawn": "7.0.6",
+    "fflate": "0.8.3",
+    "tldts": "7.4.18",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "sharp": "0.35.5"
+  }
+}
