@@ -36,7 +36,7 @@ export function resolveRepository(input) {
 
 export function safeOutput(home, repo) {
   const result = canonicalPath(home);
-  if (repo && isWithin(repo, result)) throw new Error('Research artifacts must be outside the repository under study.');
+  if (repo && isWithin(canonicalPath(repo), result)) throw new Error('Research artifacts must be outside the repository under study.');
   return result;
 }
 
@@ -58,8 +58,9 @@ export function resolveCitation(source, repo) {
   if (!repo || /^[a-z][a-z0-9+.-]*:\/\//i.test(source)) return null;
   const file = source.replace(/:\d+(?::\d+)?$/, '');
   try {
-    const target = canonicalPath(path.resolve(repo, file));
-    if (!isWithin(repo, target) || !existsSync(target) || !statSync(target).isFile()) return null;
+    const root = canonicalPath(repo);
+    const target = canonicalPath(path.resolve(root, file));
+    if (!isWithin(root, target) || !existsSync(target) || !statSync(target).isFile()) return null;
     return target;
   } catch { return null; }
 }

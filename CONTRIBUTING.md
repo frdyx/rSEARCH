@@ -12,6 +12,8 @@ npm run check
 
 Tests are offline and use synthetic or sanitized recorded events. Live provider
 tests spend normal provider usage and must be run deliberately, not in PR CI.
+Clean-install checks may download npm dependencies; they never invoke a research
+provider. The published CLI includes a shrinkwrap lock and pins the MCP peer.
 Never include credentials, personal configuration, private repository material,
 or unreviewed provider logs in a contribution.
 

@@ -11,11 +11,14 @@ const temporary = mkdtempSync(path.join(tmpdir(), 'rsearch clean install '));
 const prefix = path.join(temporary, 'npm');
 const archive = path.join(temporary, 'rsearch-0.2.0.tgz');
 copyFileSync(path.join(root, 'dist/rsearch-0.2.0.tgz'), archive);
-const install = spawn.sync('npm', ['install', '--prefix', prefix, '--ignore-scripts', '--omit=dev', '--offline', '--no-audit', '--no-fund', archive], { encoding: 'utf8', windowsHide: true });
+const install = spawn.sync('npm', ['install', '--prefix', prefix, '--ignore-scripts', '--omit=dev', '--prefer-offline', '--no-audit', '--no-fund', archive], { encoding: 'utf8', windowsHide: true });
 if (install.status !== 0) throw new Error('Clean package installation failed: ' + install.stderr);
 const installed = path.join(prefix, 'node_modules/rsearch/bin/rsearch.mjs');
 const help = spawn.sync(process.execPath, [installed, '--help'], { encoding: 'utf8', windowsHide: true, cwd: temporary });
 if (help.status !== 0 || !help.stdout.includes('Research you can inspect')) throw new Error('Installed CLI does not start.');
+const wrapper = path.join(prefix, 'node_modules/.bin', process.platform === 'win32' ? 'rsearch.cmd' : 'rsearch');
+const wrapped = spawn.sync(wrapper, ['--help'], { encoding: 'utf8', windowsHide: true, cwd: temporary });
+if (wrapped.status !== 0 || !wrapped.stdout.includes('Research you can inspect')) throw new Error('Installed command wrapper does not start from a path with spaces.');
 const bundle = unzipSync(new Uint8Array(readFileSync(path.join(root, 'dist/rsearch-0.2.0.mcpb'))));
 const directory = path.join(temporary, 'desktop');
 for (const [name, data] of Object.entries(bundle)) {
